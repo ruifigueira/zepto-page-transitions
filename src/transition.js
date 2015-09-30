@@ -12,11 +12,11 @@
  * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- * 
+ *
  * @author gileadis@gmail.com
  * @version 1.0.0
- * 
- * @requires 
+ *
+ * @requires
  * Zepto JavaScript Library: http://zeptojs.com
  */
 
@@ -113,8 +113,7 @@ $(document).ready(function() {
 					this.attr('id', '_trans_div' + zIndex);
 					pages = this;
 				} else {
-					pages = $('<div data-role="page" id="_trans_div' + zIndex + '" />');
-					this.children().wrapAll(pages);
+					pages = this.children().wrapAll('<div data-role="page" id="_trans_div' + zIndex + '" />').parent();
 				}
 			}
 
@@ -464,4 +463,4 @@ $(document).ready(function() {
 		return relative;
 	}
 
-})( Zepto );
+})( typeof Zepto === 'undefined' ? jQuery : Zepto );
